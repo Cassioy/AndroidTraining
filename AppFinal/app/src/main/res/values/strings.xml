@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Birthday app</string>
+    <string name="newPeople">New person birth</string>
+    <string name="listPeople">List people birth</string>
+    <string name="Title">Home</string>
+    <string name="nome">Name</string>
+    <string name="dtNasc">Was born</string>
+    <string name="dtNascButtom">Date was born</string>
+    <string name="submit">Send</string>
+</resources>

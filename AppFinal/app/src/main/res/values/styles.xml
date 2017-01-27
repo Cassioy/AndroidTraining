@@ -3,13 +3,25 @@
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorPrimary">@color/colorGray</item>
+        <item name="colorPrimaryDark">@color/colorDarkGray</item>
+        <item name="colorAccent">@color/colorGray</item>
     </style>
     <style name="Title">
         <item name="android:color">@color/colorDarkGray</item>
         <item name="android:textSize">50dp</item>
+    </style>
+    <style name="AlertDialogDtNasc">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:headerBackground">@color/colorGray</item>
+        <item name="android:panelColorBackground">@color/colorGray</item>
+        <item name="colorPrimary">@color/colorGray</item>
+        <item name="colorPrimaryDark">@color/colorDarkGray</item>
+        <item name="colorAccent">@color/colorGray</item>
     </style>
 
 </resources>

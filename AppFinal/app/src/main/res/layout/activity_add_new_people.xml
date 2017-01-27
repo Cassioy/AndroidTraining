@@ -40,11 +40,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
+            android:id="@+id/textDate"
             android:text="00/00/0000"/>
         <Button
             android:layout_below="@id/dtNascText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:id="@+id/buttonBirth"
             android:text="@string/dtNascButtom"
             android:textSize="10dp"
             android:drawableRight="@drawable/date_button"/>

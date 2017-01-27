@@ -19,10 +19,11 @@ public class ManagerPeopleAdapter extends ArrayAdapter<ManagePeople>{
 
     private static final String LOG_TAG = ManagerPeopleAdapter.class.getSimpleName();
 
-    public ManagerPeopleAdapter(final Context context, final List<ManagePeople> managePeople) {
+    public ManagerPeopleAdapter(final Activity context, final List<ManagePeople> managePeople) {
         super(context, 0, managePeople);
     }
 
+    @Override
     public View getView(final int position, final View convertView, final ViewGroup parent){
         View listView = convertView;
         if(listView == null){

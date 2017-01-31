@@ -1,5 +1,4 @@
 package com.example.administrator.appfinal;
-
 import android.util.Log;
 
 import java.io.BufferedInputStream;
@@ -11,6 +10,9 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.ProtocolException;
 import java.net.URL;
+import java.net.URLEncoder;
+import java.util.List;
+import java.util.Map;
 
 /**
  * Created by bafs on 25/01/2017.
@@ -24,7 +26,7 @@ public class HttpHandler {
 
     }
 
-    public String makeServiceCall(String reqUrl) {
+    public String makeGETServiceCall(String reqUrl) {
         String response = null;
         try{
             URL url = new URL(reqUrl);
@@ -32,6 +34,34 @@ public class HttpHandler {
             connect.setRequestMethod("GET");
             connect.setConnectTimeout(15000);
             connect.setReadTimeout(10000);
+
+            InputStream in = new BufferedInputStream(connect.getInputStream());
+            response = convertStreamToString(in);
+
+        }catch (MalformedURLException e) {
+            Log.e(LOG_TAG, "MalformedException " + e.getMessage());
+        }catch (ProtocolException e) {
+            Log.e(LOG_TAG, "Protocol Exception " + e.getMessage());
+        }catch (IOException e) {
+            Log.e(LOG_TAG, "IOException " + e.getMessage());
+        }catch (Exception e) {
+            Log.e(LOG_TAG, "Exception " + e.getMessage());
+        }
+        return response;
+    }
+
+    public String makePOSTServiceCall(String reqUrl, Map<String, String> values) {
+        String response = null;
+        try{
+            URL url = new URL(reqUrl);
+            HttpURLConnection connect = (HttpURLConnection) url.openConnection();
+            connect.setRequestMethod("POST");
+            connect.setConnectTimeout(15000);
+            connect.setReadTimeout(10000);
+
+            for (String value:values.keySet()) {
+                connect.setRequestProperty(value, values.get(value));
+            }
 
             InputStream in = new BufferedInputStream(connect.getInputStream());
             response = convertStreamToString(in);

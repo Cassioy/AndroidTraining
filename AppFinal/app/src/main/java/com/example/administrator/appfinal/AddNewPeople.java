@@ -116,7 +116,7 @@ public class AddNewPeople extends AppCompatActivity {
         @Override
         protected Void doInBackground(Void... arg){
             HttpHandler ht = new HttpHandler();
-            String url = "http://172.27.10.108:8080/app/person";
+            String url = "URL TEXT HERE";
             String jsonStr = ht.makePOSTServiceCall(url, urlParams);
 
             Log.e(TAG, "Response from url " + jsonStr);

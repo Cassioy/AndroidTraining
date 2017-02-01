@@ -45,8 +45,8 @@ public class ListPeople extends AppCompatActivity {
         @Override
         protected Void doInBackground(Void... arg){
             HttpHandler ht = new HttpHandler();
-            String url = "Endereco do servico aqui";
-            String jsonStr = ht.makeServiceCall(url);
+            String url = "URL TEXT HERE";
+            String jsonStr = ht.makeGETServiceCall(url);
 
             Log.e(TAG, "Response from url " + jsonStr);
             if (jsonStr != null) {
